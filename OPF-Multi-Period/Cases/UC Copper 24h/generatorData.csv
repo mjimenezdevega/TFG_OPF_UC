@@ -1,0 +1,5 @@
+tech,Ng_total,Pub_MW,Pmin_MW,Pmax_MW,Cm_EUR_MWh,CnL_EUR_h,RR_MW_per_h,Tst_h,Tmut_h,Tmdt_h,Ng0_units,Pg0_total_MW
+CC,47,520,104,520,55,6000,150,4,3,4,0,0
+Nuclear,7,1000,900,1000,10,12000,100,4,24,24,7,6300
+CR,100,60,15,60,60,2000,30,3,2,2,0,0
+Biomasa,50,22.1,8,22.1,70,80,10,2,2,2,0,0

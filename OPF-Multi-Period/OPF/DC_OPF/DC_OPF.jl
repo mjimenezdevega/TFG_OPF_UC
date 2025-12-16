@@ -16,6 +16,31 @@ function DC_OPF(dLine::DataFrame, dGen::DataFrame, dNodes::Vector{DataFrame}, nN
     ########## DATA MANAGEMENT ##########
     P_Cost0, P_Cost1, P_Cost2, P_Gen_lb, P_Gen_ub, Gen_Status, P_Demand, G_Solar, G_Wind, E_s_max, E_s_min, eta_c, eta_d, P_s_c_max, P_s_d_max, P_rr = dataManagerLP(dGen, dNodes, nN, bMVA, hours, dSolar, dWind, dStorage)
     
+        # =========== DEBUG DENTRO DE DC_OPF ===========
+    println("\n*** DEBUG DC_OPF ***")
+
+    println("\nP_Demand (primeras 3 horas, todos los buses):")
+    for h in 1:min(hours, 3)
+        println("hora $h: ", P_Demand[:, h])
+    end
+
+    println("\nG_Solar (primeras 3 horas, todos los buses):")
+    for h in 1:min(hours, 3)
+        println("hora $h: ", G_Solar[:, h])
+    end
+
+    println("\nG_Wind (primeras 3 horas, todos los buses):")
+    for h in 1:min(hours, 3)
+        println("hora $h: ", G_Wind[:, h])
+    end
+
+    println("\nGen_Status: ", Gen_Status)
+    println("\nP_Gen_lb: ", P_Gen_lb)
+    println("\nP_Gen_ub: ", P_Gen_ub)
+
+    println("\n*** FIN DEBUG DC_OPF ***\n")
+    # ==============================================
+
     # Line susceptance matrix
     B = susceptanceMatrix(dLine, nN, nL)
     

@@ -1,0 +1,4 @@
+bus,Pmin_MW,Pmax_MW,Pmsg_MW,Cm_EUR_MWh,CnL_EUR_h,C_start_EUR,RR_MW_per_h,Tst_h,Tmut_h,Tmdt_h,status
+2,40,100,40,50,1000,10000,35,2,4,2,1
+2,20,60,20,30,40,300,10,2,3,2,1
+

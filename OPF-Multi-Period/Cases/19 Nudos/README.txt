@@ -1,0 +1,2 @@
+In this case, we have used a simplified 19-bus representation of the Iberian peninsular power system, 
+and an analysis is performed to assess how intertemporal generation constraints affect the total system cost.
