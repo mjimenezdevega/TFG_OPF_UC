@@ -21,62 +21,47 @@ map_solver(s::AbstractString) = begin
 end
 
 """
-    run_case_UC_Copper_24h(; solver_name="HiGHS") -> model
+    run_case_24h(; solver_name="HiGHS") -> model
 
-Run case UC+ED 24h "plato de cobre".
-`solver_name` admits "HiGHS" or "Gurobi". 
+Run case UC+ED 24h "Copper Plate".
+Lee:
+- demandData.csv  (col: PD_MW)
+- generatorData.csv
+- solarData.csv   (col: PSolar_MW)
+- windData.csv    (col: PWind_MW)
 """
 function run_case_24h(; solver_name::AbstractString = "HiGHS")
-    CASE  = joinpath(@__DIR__, "..", "Cases", "UC Copper 24h")
+    CASE   = joinpath(@__DIR__, "..", "Cases", "UC Copper 24h")
     demand = joinpath(CASE, "demandData.csv")
     gens   = joinpath(CASE, "generatorData.csv")
-    cf     = joinpath(CASE, "res_cf_24h.csv")
-    meta   = joinpath(CASE, "renewables_meta.csv")
+    solar  = joinpath(CASE, "solarData.csv")
+    wind   = joinpath(CASE, "windData.csv")
 
-    # run_example (model, df)
-    model, df = run_example(
-        demand_csv   = demand,
-        gens_csv     = gens,
-        res_cf_csv   = cf,
-        res_meta_csv = meta,
-        optimizer    = map_solver(solver_name),
-    )
+    model, df_detail = run_example(
+        demand_csv = demand,
+        gens_csv   = gens,
+        solar_csv  = solar,
+        wind_csv   = wind,
+        optimizer  = map_solver(solver_name),)
 
-    # Save results
-    data = load_data(demand_csv=demand, gens_csv=gens, res_cf_csv=cf, res_meta_csv=meta)
-    save_results!(model, data)
+    
+    save_results_detail!(df_detail)
 
     return model
 end
 
 """
-    save_results!(model, data)
+    save_results_detail!(df_detail)
 
-Write a CSV in `Results/` with (hour, tech, Pg, Ng).
+Save in Results/CSV with:
+hour, tech, Ng_on, Nst_cmd, Nsg_start, Nsd_stop, Pg_MW, PD_MW,
+PRES_avail_MW, Pcurt_MW, cost_tech_EUR, cost_hour_total_EUR
 """
-function save_results!(model, data)
-    (; G, T) = data
-
-    rows = DataFrame(
-        hour = Int[],
-        tech = String[],
-        Pg   = Float64[],
-        Ng   = Union{Missing,Int}[],
-    )
-
-    for t in 1:T, g in G
-        pg = JuMP.value(model[:Pg][g, t])
-        ng = JuMP.value(model[:Ng][g, t])
-
-        pg = isnan(pg) ? 0.0 : pg
-        ng_out = isnan(ng) ? missing : Int(round(ng))
-
-        push!(rows, (t, String(g), pg, ng_out))
-    end
-
+function save_results_detail!(df_detail::DataFrame)
     outdir = joinpath(@__DIR__, "..", "Results")
     isdir(outdir) || mkpath(outdir)
-    fname = joinpath(outdir, "uc_copper_24h_" * Dates.format(now(), "yyyymmdd_HHMMSS") * ".csv")
-    CSV.write(fname, rows)
-    @info "Results saved in $(fname)"
+
+    fname = joinpath(outdir, "uc_copper_24h_DETAIL_" * Dates.format(now(), "yyyymmdd_HHMMSS") * ".csv")
+    CSV.write(fname, df_detail)
+    @info "Detailed results saved in $(fname)"
 end

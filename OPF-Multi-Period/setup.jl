@@ -1,7 +1,7 @@
 using Pkg
 
-# Activar el entorno del proyecto
+# Activate the project environment
 Pkg.activate(".") 
 
-# Instalar todas las dependencias listadas
+# Install all dependencies
 Pkg.instantiate()
