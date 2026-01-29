@@ -1,6 +1,5 @@
 # --------------------------------
 # Functions/runCase3NudosUC.jl
-# Case: 3 Nudos UC - DC_OPF_UC
 # --------------------------------
 using CSV
 using DataFrames

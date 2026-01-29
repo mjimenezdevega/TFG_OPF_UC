@@ -1,6 +1,5 @@
 # --------------------------------
 # Functions/runCase3NudosAmpliacion.jl
-# Case: 3 Nudos Ampliación (solar, gas, bio, wind) with UC
 # --------------------------------
 using CSV
 using DataFrames
