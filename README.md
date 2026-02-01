@@ -39,9 +39,9 @@ It automatically uses the `Project.toml` and `Manifest.toml` files included in t
 1️⃣ Click on the **MyBinder badge** above  
 2️⃣ Wait until the environment is built (first launch may take a few minutes)  
 3️⃣ A **JupyterLab interface** will open in your browser  
-4️⃣ Open a **Terminal** inside JupyterLab  
+4️⃣ Open a **New -> Terminal** inside JupyterLab  
 5️⃣ Navigate to the project folder: cd OPF-Multi-Period  
-6️⃣ Run the main Julia script: julia main.jl  
+6️⃣ Run the main Julia script: julia --project=../binder main.jl  
 7️⃣ Follow the interactive menu:  
     - Select study case  
     - Select OPF type (in this proyect you have to select DC-OPF for all the cases excep UC Copper that has ist own)  
