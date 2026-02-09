@@ -1,4 +1,4 @@
-# TFG – DC-OPF-UC & Unit Commitment (Julia / JuMP)
+<img width="692" height="899" alt="image" src="https://github.com/user-attachments/assets/4df59e66-f801-409a-a5b6-4afbfcd58665" /><img width="692" height="899" alt="image" src="https://github.com/user-attachments/assets/a09f0266-de10-4dd9-a00b-30d827c8e981" /># TFG – DC-OPF-UC & Unit Commitment (Julia / JuMP)
 
 This repository contains the implementation of several **power system optimization models** developed in **Julia** using **JuMP**, as part of a **Bachelor’s Thesis (TFG)**.
 
@@ -252,4 +252,11 @@ Unit Commitment to detailed DC-OPF-UC formulations, analyzing:
 - Impact of network constraints
 - Differences in marginal prices and dispatch
 
+</details>
+
+## Funding acknowledgment
+<details>
+<summary> 👉Click here to see more details</summary>
+This work was partially supported by MICIU/AEI/10.13039/501100011033 and ERDF/EU under grant PID2023-150401OA-C22, as well as by the Madrid Government (Comunidad de Madrid-Spain) under the Multiannual Agreement 2023-2026 with Universidad Politécnica de Madrid, ‘Line A – Emerging PIs’ (grant number: 24-DWGG5L-33-SMHGZ1).
+    <img width="692" height="899" alt="image" src="https://github.com/user-attachments/assets/414411b2-4487-4d49-a85b-b59150306b21" />
 </details>
