@@ -1,4 +1,4 @@
-<img width="692" height="899" alt="image" src="https://github.com/user-attachments/assets/4df59e66-f801-409a-a5b6-4afbfcd58665" /><img width="692" height="899" alt="image" src="https://github.com/user-attachments/assets/a09f0266-de10-4dd9-a00b-30d827c8e981" /># TFG – DC-OPF-UC & Unit Commitment (Julia / JuMP)
+# TFG – DC-OPF-UC & Unit Commitment (Julia / JuMP)
 
 This repository contains the implementation of several **power system optimization models** developed in **Julia** using **JuMP**, as part of a **Bachelor’s Thesis (TFG)**.
 
