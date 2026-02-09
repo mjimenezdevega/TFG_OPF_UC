@@ -259,5 +259,5 @@ Unit Commitment to detailed DC-OPF-UC formulations, analyzing:
 <summary> 👉Click here to see more details</summary>
 This work was partially supported by MICIU/AEI/10.13039/501100011033 and ERDF/EU under grant PID2023-150401OA-C22, as well as by the Madrid Government (Comunidad de Madrid-Spain) under the Multiannual Agreement 2023-2026 with Universidad Politécnica de Madrid, ‘Line A – Emerging PIs’ (grant number: 24-DWGG5L-33-SMHGZ1).
     
-    <img width="692" height="899" alt="image" src="https://github.com/user-attachments/assets/414411b2-4487-4d49-a85b-b59150306b21" />
+<img width="692" height="899" alt="image" src="https://github.com/user-attachments/assets/414411b2-4487-4d49-a85b-b59150306b21" />
 </details>
