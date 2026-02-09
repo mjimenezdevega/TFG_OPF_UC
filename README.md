@@ -268,7 +268,7 @@ This work was partially supported by MICIU/AEI/10.13039/501100011033 and ERDF/EU
 <p align="center">
   <img src="https://github.com/user-attachments/assets/414411b2-4487-4d49-a85b-b59150306b21"
        alt="Funding logos"
-       style="max-width:100%; height:auto;">
+       style="max-width:75%; height:auto;">
 </p>
 
 </details>
